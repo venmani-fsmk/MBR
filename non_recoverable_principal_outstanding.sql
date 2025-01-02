@@ -1,4 +1,5 @@
 -- Code for extracting non recoverable principal Outstanding
+-- We will be showing the top 5 products based on number of unique borrowers (hence why grouped based on categories, can change the categories)
 select reference_date,     
     CASE
     WHEN A.LOAN_PRODUCT_NAME = 'Bolt (Islamic Financing)' THEN 'Bolt'
