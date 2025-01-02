@@ -9,6 +9,6 @@ select DATE_TRUNC('MONTH',PIPEDRIVE_DEAL_CREATED_LCL_TS::date) AS REFERENCE_DATE
     from CDM.OPERATIONS.MY_PIPEDRIVE_DEAL_CONVERSION_T a
     --where a.pipedrive_deal_pipeline_name='MY - Micro Pipeline'
     --and a.PIPEDRIVE_DEAL_STATUS!='open'
-    WHERE a.pipedrive_deal_type='New to FS'
+    WHERE (a.pipedrive_deal_type!='New to FS' or a.pipedrive_deal_type is NULL)
     group by REFERENCE_DATE,BACMAN_L1_CHANNEL_NAME
     order by REFERENCE_DATE desc;
