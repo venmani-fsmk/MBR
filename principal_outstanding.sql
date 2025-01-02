@@ -1,5 +1,6 @@
 -- Code for calculating principal outstanding on each date for MY Borrowers
 -- The value which is tagged as METRIC will be the one shown in charts
+-- We will be showing the top 5 products based on number of unique borrowers (hence why grouped based on categories, can change the categories)
 select reference_date,     
     CASE
     WHEN A.LOAN_PRODUCT_NAME = 'Bolt (Islamic Financing)' THEN 'Bolt'
